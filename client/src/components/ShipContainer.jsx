@@ -1,14 +1,17 @@
 import React from 'react'
 import Ship from './Ship'
+import Ships from './Ships'
 
-const ShipContainer = ({ships}) => {
-  const shipNodes = ships.map((ship, index) => {
+const ShipContainer = ({starships}) => {
+  const shipNodes = starships.map((starship, index) => {
     return (
       <Ship
         key={index}
-        name={ship.name}
-        model={ship.model}
-        cost={ship.cost_in_credits + " Credits"} />
+        name={starship.name}
+        model={starship.model}
+        cost={starship.cost_in_credits + " Credits"} 
+        crew={starship.crew + " Hands"}
+        length={starship.length+ " m"}/>
     )
   });
 
@@ -19,4 +22,4 @@ const ShipContainer = ({ships}) => {
   );
 }
 
-export default ShipContainer;
+export default ShipContainer

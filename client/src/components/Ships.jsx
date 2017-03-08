@@ -2,10 +2,9 @@ import React from 'react'
 import ShipContainer from './ShipContainer'
 
 class Ships extends React.Component{
-  
   constructor(){
     super();
-    this.state = {ships: []}
+    this.state = {starships: []}
   }
 
   componentDidMount(){
@@ -16,13 +15,13 @@ class Ships extends React.Component{
     request.onload = () => {
       const responseData = JSON.parse(request.responseText)
       const shipContainer = responseData.results
-      this.setState({ships: ShipContainer})
+      this.setState({starships: ShipContainer})
     }
     request.send()
   }
 
   render(){
-    return(<ShipContainer ships={this.state.ships}/>
+    return(<ShipContainer starships={this.state.starships}/>
     )
   }
   
