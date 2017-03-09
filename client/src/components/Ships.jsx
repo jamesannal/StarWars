@@ -14,7 +14,7 @@ class Ships extends React.Component{
 
     request.onload = () => {
       const responseData = JSON.parse(request.responseText)
-      const shipContainer = responseData.results
+      const ShipContainer = responseData.results
       this.setState({starships: ShipContainer})
     }
     request.send()
